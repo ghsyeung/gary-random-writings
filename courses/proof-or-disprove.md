@@ -17,31 +17,32 @@ asked if you can prove the statement to be **true** (prove) or
 **false** (disprove).
 
 But don't fret, we can solve it in 2 parts and the first part doesn't require
-you to know more than just basic Logic with Quantifiers.
+you to know more than just basic Logic with Quantifiers. 
 
 Remember in the world of logic, any mathematical statement can either be
 **true** or **false**.
 
-The important part of these **prove or disprove** questions is the marks 
+The important part of these **prove or disprove** questions is that marks 
 are given to the **content** of your justification, simply saying a statement
 is true/false generally doesn't give you any marks.
 
 So the goal is **quickly identify** whether a statement is true or false.
-Then you can spend the time focusing on the justification. 
+Then you can spend the time focusing on the justification. (we'll focus on the 
+first part in this post)
 
-## Intuition
+## Intuition (∃x)
 
-It's pretty straight forward to tell whether a predicate logic statements is
+It's pretty straight forward to tell whether a predicate logic statement is
 true/false (e.g. `1 + 1 = 3 in Z`, `In English, the letter B follows after A`).
 
 Things get slighly trickier when we involve **quantifier(s)**. So let's try a few
-examples and see if we can generalize this approach after.
+examples and then see if we can generalize this approach.
 
 Suppose the statement is `Some students in Canada goes to Langara College`. I am
-sure you can quickly determin this true or false. But what's the thinking process?
+sure you can quickly determine this is true or false. But what's the thinking process?
 
 For me, this translates to `∃x, inCanada(x) ∧ isStudent(x) | x goes to Langara College`.
-It means I have "find someone who lives in Canada and is a student at the same time"
+It means I have to "find someone who lives in Canada and is a student at the same time"
 and that "someone goes to Langara College".
 
 Note that the LHS of `|` describes the condition/domain on `x`, so `x` cannot be
@@ -51,9 +52,11 @@ Well, so to prove a statement with existential qualification (`∃x`) to be **tr
 you'll need to find **one** example of `x` that satisfies the **domain**.
 
 > 🧙: (Observation 1) To prove a statement with `∃x` to be **true**, you need 
-> to only find 1 example of **`x` that's in the domain**
+> to find **only 1** example of **`x` that's in the domain**
 
-Second example, suppose the statements is `Every student in Canada goes to 
+## Intuition (∀x)
+
+Second example, suppose the statement is `Every student in Canada goes to 
 Langara College`. I am sure you can quickly determine whether this is true or 
 false. But what's the thinking process?
 
@@ -90,19 +93,19 @@ this is true, we need to find
 > is **false**
 
 > 🧙: (Observation 2.1) To prove a statement with `∀x` to be **false**, you can
-> negate the statement (be careful not to negate the domain). And solve it like
+> **negate the statement** (be careful not to negate the domain). And solve it like
 > Observation 1.
 
 With Obersation 1 and 2, now you are equipped with new tools to quickly 
 determine whether your should **prove** or **disprove** a statement.
 
-## Strategy
+## Strategy (TL;DR)
 
 So here's the overall strategy.
 
 1. Try a few examples in the domain.
    - try simple examples and corner case examples
-     - e.g. try 0 for `Z`, 0, 1 for `N`, 1 for `modulo`, these are all simple
+     - e.g. try 0 for `ℤ`, 0, 1 for `ℕ`, 1 for `modulo`, these are all simple
      numbers and also corner cases in those domains
    - If the statement involves `∀x` and you find examples in the domain that
    doesn't work, then you **disprove** using the example you found.
@@ -110,9 +113,9 @@ So here's the overall strategy.
    works, then you **prove** using the example you found.
 2. If 1 didn't work,
    - for `∀x`, this probably means the statement is true, and you'll need
-   to construct a prove based on the theorems/axioms in the problem area
+   to construct a proof based on the theorems/axioms in the problem area
    - for `∃x s.t. p(x)`, this means the statement is likely false, and you'll 
-   need to construct a prove to show that `∀x s.t. ¬p(x)` based on theorems/axioms
+   need to construct a proof to show that `∀x s.t. ¬p(x)` based on theorems/axioms
    in the problem area
 
 Let's do an example. 
@@ -132,7 +135,7 @@ LHS = {1} - 0 = {1}
 RHS = ({1} - 0) ∩ ({1} - 0) = {1}
 LHS = RHS
 ```
-Ok, this looks fine, let's try another one.
+Ok, this is true, so it doesn't help us, let's try another one.
 
 Second sample, let's try to make `B` and `C` different.
 ```
@@ -144,7 +147,7 @@ RHS = ({1, 2} - {1}) ∩ ({1, 2} - {2}) = {2} ∩ {1} = 0
 LHS != RHS
 ```
 Oh wait! This means we have an example to show the statement is **false**!
-So we have arrived at a **counter-example** for `∀x`, so we can **disprove**
+So we have arrived at a **counter-example** for `∀x`, and we can **disprove**
 the statement!
 
 This is what you have to write

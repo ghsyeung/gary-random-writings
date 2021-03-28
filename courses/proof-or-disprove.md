@@ -101,19 +101,19 @@ determine whether your should **prove** or **disprove** a statement.
 So here's the overall strategy.
 
 1. Try a few examples in the domain.
-  - try simple examples and corner case examples
-    - e.g. try 0 for `Z`, 0, 1 for `N`, 1 for `modulo`, these are all simple
-    numbers and also corner cases in those domains
-  - If the statement involves `∀x` and you find examples in the domain that
-  doesn't work, then you **disprove** using the example you found.
-  - If the statement involves `∃x` and you find examples in the domain that
-  works, then you **prove** using the example you found.
-1. If 1 didn't work,
-  - for `∀x`, this probably means the statement is true, and you'll need
-  to construct a prove based on the theorems/axioms in the problem area
-  - for `∃x s.t. p(x)`, this means the statement is likely false, and you'll 
-  need to construct a prove to show that `∀x s.t. ¬p(x)` based on theorems/axioms
-  in the problem area
+   - try simple examples and corner case examples
+     - e.g. try 0 for `Z`, 0, 1 for `N`, 1 for `modulo`, these are all simple
+     numbers and also corner cases in those domains
+   - If the statement involves `∀x` and you find examples in the domain that
+   doesn't work, then you **disprove** using the example you found.
+   - If the statement involves `∃x` and you find examples in the domain that
+   works, then you **prove** using the example you found.
+2. If 1 didn't work,
+   - for `∀x`, this probably means the statement is true, and you'll need
+   to construct a prove based on the theorems/axioms in the problem area
+   - for `∃x s.t. p(x)`, this means the statement is likely false, and you'll 
+   need to construct a prove to show that `∀x s.t. ¬p(x)` based on theorems/axioms
+   in the problem area
 
 Let's do an example. 
 
